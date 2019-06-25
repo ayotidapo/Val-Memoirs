@@ -1,0 +1,22 @@
+.Navbar{
+    color:#fff !important;
+    .nvbg{
+        background:#002c51 !important;
+    }
+    .wht_txt{
+        a{
+            color:#fff !important;
+        }
+    }
+    .brand{
+       display:inline-block;
+       width:90px;
+       height:40px ;
+       color: #fff;
+       margin-right:50px;
+       img{
+           max-width:100%;
+           max-height:100%;
+       }
+    }
+}
