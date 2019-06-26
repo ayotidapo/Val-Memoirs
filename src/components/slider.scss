@@ -25,6 +25,12 @@
                 &:hover{
                     background:#048af7;
                 }
+                &:disabled{
+                    &:hover{
+                        cursor:not-allowed;
+                        background:#a2c3dd;
+                    }
+                }
             }
         }
     }

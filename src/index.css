@@ -23,3 +23,26 @@ code {
 .btnaction:hover{
   background:#07518d !important;
 }
+
+.right{
+  text-align:right;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar:hover{
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background-color: #ccc;
+  height: 7px;
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+::-webkit-scrollbar-thumb :hover{
+  cursor: pointer;
+}

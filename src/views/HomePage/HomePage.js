@@ -22,6 +22,7 @@ class Homepage extends React.Component {
     state = {
         open: false,
         action: null,
+        index: null,
         title: null,
         fields: {
             firstname: {
@@ -74,7 +75,7 @@ class Homepage extends React.Component {
     }
 
     onAddStory = () => {
-        const { content } = this.props.userData
+        const { content, registered } = this.props.userData
         const { fields } = this.state
         const id = content.length + 1
         const new_story = {}
@@ -83,9 +84,13 @@ class Homepage extends React.Component {
         }
         new_story.likes = 0
         new_story.id = id
+        if (registered.includes(new_story.username)) {
+            toastr.warning(`@${new_story.username} has already shared a story!`, 'Warning!', { timeOut: 5000 })
+            return
+        }
         this.props.addStory(new_story)
         this.toggle()
-        toastr.success('Story Added Succesfully!')
+        toastr.success('Story Added Succesfully!', 'Success', { timeOut: 5000 })
 
     }
     onChange = (name, value) => {
@@ -100,33 +105,24 @@ class Homepage extends React.Component {
             }
         })
     }
-    onsetAction = (action, title, story = null) => {
+
+    onsetAction = (action, title, index = null, story = null) => {
         this.setState({
             action,
             story,
+            index,
             title
         })
-        //const { fields } = this.state
-        // switch (action) {
-        //     case 'share':
-        //         view = (
-        //             <div>
-        //                 {Object.keys(fields).map((field, key) => (
-        //                     <InputField field={fields[field]} key={key} onChange={this.onChange} />
-        //                 ))}
-        //                 <p onClick={this.onAddStory} style={{ textAlign: 'right' }}><button className="btn btnaction" >Add</button></p>
-        //             </div>
-        //         )
-        //         break;
-        //     case 'readmore':
-        //         view = <div>{story}</div>
-        //         break;
-        //     default:
-        //         view = null
-        // }
         this.toggle()
     }
 
+    onLike = (storyIndex) => {
+
+        this.props.likeStory(storyIndex)
+        this.setState({
+            open: false
+        })
+    }
 
     toggle = () => {
         this.setState(preVState => ({
@@ -135,7 +131,8 @@ class Homepage extends React.Component {
     }
     render() {
         toastr.success('Story Added Succesfully!')
-        const { fields, action, story, title } = this.state
+        const { shared } = this.props.userData
+        const { fields, action, story, title, index } = this.state
         switch (action) {
             case 'share':
                 view = (
@@ -148,7 +145,12 @@ class Homepage extends React.Component {
                 )
                 break;
             case 'readmore':
-                view = <div>{story}</div>
+                view = <div>
+                    <div style={{ height: '400px', overflowY: 'scroll' }}>
+                        {story}
+                    </div >
+                    <p className="right plk"><span className="like" onClick={() => this.onLike(index)} style={{ fontSize: '2rem' }} /> Like</p>
+                </div>
                 break;
             default:
                 view = null
@@ -160,7 +162,7 @@ class Homepage extends React.Component {
             < div className="Home" >
                 <AppNavbar />
 
-                <Slider onClicked={this.onsetAction} />
+                <Slider onClicked={this.onsetAction} shared={shared} />
                 <Modal open={open} toggle={this.toggle} title={title} >
                     {view}
 
@@ -179,11 +181,11 @@ class Homepage extends React.Component {
                                         <h4 style={{ textAlign: 'center' }}>{user.headline}</h4>
                                         <p className={classnames('minimize')}>
                                             {stripd(user.story, 100)}
-                                            <span onClick={() => this.onsetAction('readmore', user.headline, user.story)}> ...read more</span>
+                                            <span onClick={() => this.onsetAction('readmore', user.headline, i, user.story)}> ...read more</span>
                                         </p>
 
                                     </div>
-                                    <p><span className="like"> {`Liked by ${user.likes} people`}</span></p>
+                                    <p><span className="like" onClick={() => this.onLike(i)}> &nbsp;Liked by <strong style={{ color: 'blue' }}> {user.likes}</strong> people</span></p>
 
 
 

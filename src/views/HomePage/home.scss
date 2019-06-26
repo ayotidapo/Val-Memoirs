@@ -3,7 +3,7 @@
     font-family:'lato';
     overflow-x:hidden;
     .minimize{
-        
+        min-height:48px;
         margin-bottom:2px;
         span{
             text-decoration: underline;
@@ -16,12 +16,12 @@
     
     .story{
       background:#ccc;
-      padding: 10px 10px 4px 10px;
+      padding: 10px;
       margin:10px;
       border-radius:3px;
       height: 247px;
       .sumry{
-        padding-bottom:35px;
+        padding-bottom:28px;
         span{
             color:blue;
             font-size:0.8rem;
@@ -47,16 +47,26 @@
        
       }
       
-      .like{
-        &::before{
-          content:'\f164';
-          color:blue;
-          font-family:FontAwesome;
-        }
-        
-      }
+      
       
     }
+    
   }
-  
-  
+  ///////
+  .like{
+         
+    &:hover{
+        cursor:pointer;
+    }
+   &::before{
+     content:'\f164';
+     color:blue;
+     font-family:FontAwesome;
+   }
+   
+ }
+.plk{
+    border-top:1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom:0px;
+ }
