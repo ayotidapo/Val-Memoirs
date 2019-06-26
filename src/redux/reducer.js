@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
+import { slideImages } from './../app_redux'
 import { userStory } from '../views/HomePage/redux/homepage'
 function lastAction(state = null, action) {
     return action
@@ -8,6 +9,7 @@ function lastAction(state = null, action) {
 const rootReducer = combineReducers({
 
     lastAction,
+    slideImages,
     userStory,
     router: routerReducer,
 

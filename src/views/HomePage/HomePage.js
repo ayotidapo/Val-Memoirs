@@ -74,6 +74,10 @@ class Homepage extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.props.callgetImages()
+    }
+
     onAddStory = () => {
         const { content, registered } = this.props.userData
         const { fields } = this.state
