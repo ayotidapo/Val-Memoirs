@@ -19,12 +19,17 @@ const InputFields = ({ field, onChange }) => {
         case 'radio':
             input = (
                 field.choices.map((choice, key) =>
-                    <input
-                        type={field.type}
-                        name={field.name}
-                        checked={field.checked}
-                        onChange={e => onChange(e.target.name, e.target.checked)}
-                    />
+                    <div style={{ display: 'inline-block', margin: '10px 0px' }}>
+                        <span>{choice.label} </span>
+                        <input
+                            type={field.type}
+                            name={field.name}
+                            checked={field.checked}
+                            value={choice.value}
+                            onChange={e => onChange(e.target.name, e.target.value)}
+                        />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
 
                 )
 

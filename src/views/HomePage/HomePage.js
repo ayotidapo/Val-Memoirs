@@ -51,8 +51,8 @@ class Homepage extends React.Component {
                 title: "Gender",
                 error: "",
                 choices: [
-                    { label: 'Male', value: 1, checked: false },
-                    { label: 'Female', value: 2, checked: false }
+                    { label: 'Male', value: "M", checked: false },
+                    { label: 'Female', value: "F", checked: false }
                 ],
                 type: 'radio'
             },
@@ -86,6 +86,10 @@ class Homepage extends React.Component {
         new_story.id = id
         if (registered.includes(new_story.username)) {
             toastr.warning(`@${new_story.username} has already shared a story!`, 'Warning!', { timeOut: 5000 })
+            return
+        }
+        if (Object.keys(new_story).some(field => !fields[field].value)) {
+            toastr.error(`All fields are equired`, 'Error!', { timeOut: 5000 })
             return
         }
         this.props.addStory(new_story)
@@ -130,7 +134,6 @@ class Homepage extends React.Component {
         }))
     }
     render() {
-        toastr.success('Story Added Succesfully!')
         const { shared } = this.props.userData
         const { fields, action, story, title, index } = this.state
         switch (action) {

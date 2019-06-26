@@ -48,23 +48,6 @@ export default class AppNavbar extends React.Component {
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">Link 2</NavLink>
                             </NavItem>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>
-                                    Settings
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>
-                                        Option 1
-                                        </DropdownItem>
-                                    <DropdownItem>
-                                        Option 2
-                                    </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem>
-                                        Reset
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
                         </Nav>
                     </Collapse>
                 </Navbar>
@@ -72,3 +55,25 @@ export default class AppNavbar extends React.Component {
         );
     }
 }
+
+
+
+
+
+{/* <UncontrolledDropdown nav inNavbar>
+    <DropdownToggle nav caret>
+        Settings
+                                </DropdownToggle>
+    <DropdownMenu right>
+        <DropdownItem>
+            Option 1
+                                        </DropdownItem>
+        <DropdownItem>
+            Option 2
+                                    </DropdownItem>
+        <DropdownItem divider />
+        <DropdownItem>
+            Reset
+                                    </DropdownItem>
+    </DropdownMenu>
+</UncontrolledDropdown> */}

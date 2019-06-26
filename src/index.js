@@ -6,6 +6,7 @@ import './index.css';
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/toastr/build/toastr.min.css'
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
