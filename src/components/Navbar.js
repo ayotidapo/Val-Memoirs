@@ -14,7 +14,7 @@ import {
 } from 'reactstrap'
 
 import './navbar.scss'
-export default class AppNavbar extends React.Component {
+export default class AppNavbar extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -29,6 +29,7 @@ export default class AppNavbar extends React.Component {
         });
     }
     render() {
+        const { onClicked } = this.props
         return (
             <div className="Navbar">
                 <Navbar color="light" light expand="md" className="nvbg">
@@ -43,11 +44,11 @@ export default class AppNavbar extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto wht_txt" navbar>
                             <NavItem>
-                                <NavLink href="/components/">Link 1</NavLink>
+                                <NavLink href="#">
+                                    <button className="btn btnaction" onClick={() => onClicked('share', 'Add Story')}>Share Story</button>
+                                </NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">Link 2</NavLink>
-                            </NavItem>
+
                         </Nav>
                     </Collapse>
                 </Navbar>

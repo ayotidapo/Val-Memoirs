@@ -89,7 +89,7 @@ class Homepage extends React.Component {
             return
         }
         if (Object.keys(new_story).some(field => !fields[field].value)) {
-            toastr.error(`All fields are equired`, 'Error!', { timeOut: 5000 })
+            toastr.error(`All fields are Required`, 'Error!', { timeOut: 5000 })
             return
         }
         this.props.addStory(new_story)
@@ -163,7 +163,9 @@ class Homepage extends React.Component {
         const { open } = this.state
         return (
             < div className="Home" >
-                <AppNavbar />
+                <div style={{ position: 'fixed', width: '100%', top: '0', left: '0', zIndex: '200' }}>
+                    <AppNavbar onClicked={this.onsetAction} />
+                </div>
 
                 <Slider onClicked={this.onsetAction} shared={shared} />
                 <Modal open={open} toggle={this.toggle} title={title} >

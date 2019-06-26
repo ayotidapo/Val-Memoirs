@@ -42,11 +42,11 @@ const ImageSlider = (props) => (
         <div className="overlay">
             <p >
                 <h1 style={{ fontWeight: 'bold' }}>Share the Fun!</h1>
-                <h6>Val-Memoir creates that fun environmaent to share your memorable experience with the world!</h6>
-                <h6>Love the say, exists in sharing.</h6>
+                <h6>Val-Memoir creates that fun environment to share your memorable experience with the world!</h6>
+                <h6>Love they say, exists in sharing.</h6>
             </p>
             <div className="btn_P">
-                <button className="btn" onClick={() => props.onClicked('share', 'Add Story')}>Share Experience</button>
+                <button className="btn" onClick={() => props.onClicked('share', 'Add Story')}>Share Your Experience</button>
             </div>
         </div>
         <Slider {...settings}>
