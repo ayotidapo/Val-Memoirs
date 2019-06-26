@@ -20,7 +20,7 @@ export function slideImages(state = initialImages, action) {
 }
 
 
-
+//
 // export function callgetImages() {
 //     return dispatch => {
 //         fetch('https://api.unsplash.com/photos?page=1&query=valentines', {
