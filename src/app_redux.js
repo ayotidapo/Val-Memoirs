@@ -19,7 +19,7 @@ export function slideImages(state = initialImages, action) {
     }
 }
 
-
+//
 //
 // export function callgetImages() {
 //     return dispatch => {
