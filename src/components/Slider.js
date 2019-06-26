@@ -46,7 +46,7 @@ const ImageSlider = (props) => (
                 <h6>Love the say, exists in sharing.</h6>
             </p>
             <div className="btn_P">
-                <button className="btn" onClick={props.toggle}>Share Experience</button>
+                <button className="btn" onClick={() => props.onClicked('share', 'Add Story')}>Share Experience</button>
             </div>
         </div>
         <Slider {...settings}>

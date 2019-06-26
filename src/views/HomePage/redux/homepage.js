@@ -2,10 +2,11 @@
 // import moment from 'moment'
 
 const SUBMIT_STORY = 'app/submit_story'
-
+const READ_MORE = 'app/read_more'
 const initialState = {
     content: [
         {
+            id: 1,
             firstname: 'John',
             lastname: 'Dark',
             username: "john_D",
@@ -13,9 +14,11 @@ const initialState = {
             headline: "Trip to Dubai",
             image: '',
             likes: 0,
-            story: " Lorem ipsum dolor sit amet, pellentesque dictumst ut ornare, cras mauris ligula luctus nec est rhoncus. Nec elementum luctus lectus pellentesque eget, pellentesque pede amet dui maiores euismod conubia, penatibus condimentum erat. Sodales nulla at in euismod at non, urna nec, odio nunc mauris luctus eros morbi, nibh purus, leo mi rhoncus volutpat turpis magna. Quisque montes eu ipsum ante, pulvinar sodales mollis. Orci non, dolor dictumst risus, feugiat ut vitae. Duis ipsum. Mi eget penatibus pellentesque, commodo lorem, quis rutrum laoreet lacus eros posuere, amet porta. Tellus dui nulla aliquam donec lobortis vel, leo per donec sapien id, congue praesent fringilla, mauris sollicitudin id habitasse similique, suscipit tempus wisi nec magna at conubia. Velit justo magna rhoncus velit class augue. Platea tempore pellentesque adipiscing etiam sit vestibulum, mi imperdiet et dui lorem nulla dapibus, ligula urna mollis blandit erat, elit sodales eget amet. Fusce et eget platea arcu, lectus u"
+            minimize: true,
+            story: "1.First Lorem ipsum dolor sit amet, pellentesque dictumst ut ornare, cras mauris ligula luctus nec est rhoncus. Nec elementum luctus lectus pellentesque eget, pellentesque pede amet dui maiores euismod conubia, penatibus condimentum erat. Sodales nulla at in euismod at non, urna nec, odio nunc mauris luctus eros morbi, nibh purus, leo mi rhoncus volutpat turpis magna. Quisque montes eu ipsum ante, pulvinar sodales mollis. Orci non, dolor dictumst risus, feugiat ut vitae. Duis ipsum. Mi eget penatibus pellentesque, commodo lorem, quis rutrum laoreet lacus eros posuere, amet porta. Tellus dui nulla aliquam donec lobortis vel, leo per donec sapien id, congue praesent fringilla, mauris sollicitudin id habitasse similique, suscipit tempus wisi nec magna at conubia. Velit justo magna rhoncus velit class augue. Platea tempore pellentesque adipiscing etiam sit vestibulum, mi imperdiet et dui lorem nulla dapibus, ligula urna mollis blandit erat, elit sodales eget amet. Fusce et eget platea arcu, lectus u"
         },
         {
+            id: 2,
             firstname: 'Julie',
             lastname: 'Lizzy',
             username: "lizzyJ",
@@ -23,9 +26,11 @@ const initialState = {
             headline: "My first Date in Nigeria",
             image: '',
             likes: 0,
-            story: " Lorem ipsum dolor sit amet, pellentesque dictumst ut ornare, cras mauris ligula luctus nec est rhoncus. Nec elementum luctus lectus pellentesque eget, pellentesque pede amet dui maiores euismod conubia, penatibus condimentum erat. Sodales nulla at in euismod at non, urna nec, odio nunc mauris luctus eros morbi, nibh purus, leo mi rhoncus volutpat turpis magna. Quisque montes eu ipsum ante, pulvinar sodales mollis. Orci non, dolor dictumst risus, feugiat ut vitae. Duis ipsum. Mi eget penatibus pellentesque, commodo lorem, quis rutrum laoreet lacus eros posuere, amet porta. Tellus dui nulla aliquam donec lobortis vel, leo per donec sapien id, congue praesent fringilla, mauris sollicitudin id habitasse similique, suscipit tempus wisi nec magna at conubia. Velit justo magna rhoncus velit class augue. Platea tempore pellentesque adipiscing etiam sit vestibulum, mi imperdiet et dui lorem nulla dapibus, ligula urna mollis blandit erat, elit sodales eget amet. Fusce et eget platea arcu, lectus u"
+            minimize: true,
+            story: "2. Second Lorem ipsum dolor sit amet, pellentesque dictumst ut ornare, cras mauris ligula luctus nec est rhoncus. Nec elementum luctus lectus pellentesque eget, pellentesque pede amet dui maiores euismod conubia, penatibus condimentum erat. Sodales nulla at in euismod at non, urna nec, odio nunc mauris luctus eros morbi, nibh purus, leo mi rhoncus volutpat turpis magna. Quisque montes eu ipsum ante, pulvinar sodales mollis. Orci non, dolor dictumst risus, feugiat ut vitae. Duis ipsum. Mi eget penatibus pellentesque, commodo lorem, quis rutrum laoreet lacus eros posuere, amet porta. Tellus dui nulla aliquam donec lobortis vel, leo per donec sapien id, congue praesent fringilla, mauris sollicitudin id habitasse similique, suscipit tempus wisi nec magna at conubia. Velit justo magna rhoncus velit class augue. Platea tempore pellentesque adipiscing etiam sit vestibulum, mi imperdiet et dui lorem nulla dapibus, ligula urna mollis blandit erat, elit sodales eget amet. Fusce et eget platea arcu, lectus u"
         },
         {
+            id: 3,
             firstname: 'Pat',
             lastname: 'Tom',
             username: "t_pat",
@@ -33,9 +38,11 @@ const initialState = {
             headline: "Canada Leisure Experience",
             image: '',
             likes: 0,
-            story: " Lorem ipsum dolor sit amet, pellentesque dictumst ut ornare, cras mauris ligula luctus nec est rhoncus. Nec elementum luctus lectus pellentesque eget, pellentesque pede amet dui maiores euismod conubia, penatibus condimentum erat. Sodales nulla at in euismod at non, urna nec, odio nunc mauris luctus eros morbi, nibh purus, leo mi rhoncus volutpat turpis magna. Quisque montes eu ipsum ante, pulvinar sodales mollis. Orci non, dolor dictumst risus, feugiat ut vitae. Duis ipsum. Mi eget penatibus pellentesque, commodo lorem, quis rutrum laoreet lacus eros posuere, amet porta. Tellus dui nulla aliquam donec lobortis vel, leo per donec sapien id, congue praesent fringilla, mauris sollicitudin id habitasse similique, suscipit tempus wisi nec magna at conubia. Velit justo magna rhoncus velit class augue. Platea tempore pellentesque adipiscing etiam sit vestibulum, mi imperdiet et dui lorem nulla dapibus, ligula urna mollis blandit erat, elit sodales eget amet. Fusce et eget platea arcu, lectus u"
+            minimize: true,
+            story: "3. Third Lorem ipsum dolor sit amet, pellentesque dictumst ut ornare, cras mauris ligula luctus nec est rhoncus. Nec elementum luctus lectus pellentesque eget, pellentesque pede amet dui maiores euismod conubia, penatibus condimentum erat. Sodales nulla at in euismod at non, urna nec, odio nunc mauris luctus eros morbi, nibh purus, leo mi rhoncus volutpat turpis magna. Quisque montes eu ipsum ante, pulvinar sodales mollis. Orci non, dolor dictumst risus, feugiat ut vitae. Duis ipsum. Mi eget penatibus pellentesque, commodo lorem, quis rutrum laoreet lacus eros posuere, amet porta. Tellus dui nulla aliquam donec lobortis vel, leo per donec sapien id, congue praesent fringilla, mauris sollicitudin id habitasse similique, suscipit tempus wisi nec magna at conubia. Velit justo magna rhoncus velit class augue. Platea tempore pellentesque adipiscing etiam sit vestibulum, mi imperdiet et dui lorem nulla dapibus, ligula urna mollis blandit erat, elit sodales eget amet. Fusce et eget platea arcu, lectus u"
         },
         {
+            id: 4,
             firstname: 'Eva',
             lastname: 'Matt',
             username: "jMatteva",
@@ -43,14 +50,27 @@ const initialState = {
             headline: "Honeymoon Trip with hubby",
             image: '',
             likes: 0,
-            story: " Lorem ipsum dolor sit amet, pellentesque dictumst ut ornare, cras mauris ligula luctus nec est rhoncus. Nec elementum luctus lectus pellentesque eget, pellentesque pede amet dui maiores euismod conubia, penatibus condimentum erat. Sodales nulla at in euismod at non, urna nec, odio nunc mauris luctus eros morbi, nibh purus, leo mi rhoncus volutpat turpis magna. Quisque montes eu ipsum ante, pulvinar sodales mollis. Orci non, dolor dictumst risus, feugiat ut vitae. Duis ipsum. Mi eget penatibus pellentesque, commodo lorem, quis rutrum laoreet lacus eros posuere, amet porta. Tellus dui nulla aliquam donec lobortis vel, leo per donec sapien id, congue praesent fringilla, mauris sollicitudin id habitasse similique, suscipit tempus wisi nec magna at conubia. Velit justo magna rhoncus velit class augue. Platea tempore pellentesque adipiscing etiam sit vestibulum, mi imperdiet et dui lorem nulla dapibus, ligula urna mollis blandit erat, elit sodales eget amet. Fusce et eget platea arcu, lectus u"
+            minimize: true,
+            story: "4.Fourth Lorem ipsum dolor sit amet, pellentesque dictumst ut ornare, cras mauris ligula luctus nec est rhoncus. Nec elementum luctus lectus pellentesque eget, pellentesque pede amet dui maiores euismod conubia, penatibus condimentum erat. Sodales nulla at in euismod at non, urna nec, odio nunc mauris luctus eros morbi, nibh purus, leo mi rhoncus volutpat turpis magna. Quisque montes eu ipsum ante, pulvinar sodales mollis. Orci non, dolor dictumst risus, feugiat ut vitae. Duis ipsum. Mi eget penatibus pellentesque, commodo lorem, quis rutrum laoreet lacus eros posuere, amet porta. Tellus dui nulla aliquam donec lobortis vel, leo per donec sapien id, congue praesent fringilla, mauris sollicitudin id habitasse similique, suscipit tempus wisi nec magna at conubia. Velit justo magna rhoncus velit class augue. Platea tempore pellentesque adipiscing etiam sit vestibulum, mi imperdiet et dui lorem nulla dapibus, ligula urna mollis blandit erat, elit sodales eget amet. Fusce et eget platea arcu, lectus u"
         }
     ]
 }
 
 const addNewStoryFunc = (state, action) => {
     const content = state.content.slice(0)
-    return content.unshift(action.new_story)
+
+    content.unshift(action.new_story)
+    return content
+}
+const readMoreFunc = (state, action) => {
+    const content = state.content.slice(0)
+    content.forEach(user => {
+        if (user.id === action.storyId) {
+            user.minimize = !user.minimize
+        }
+    })
+
+    return content
 }
 export function userStory(state = initialState, action) {
     switch (action.type) {
@@ -58,6 +78,11 @@ export function userStory(state = initialState, action) {
             return {
                 content: addNewStoryFunc(state, action)
             }
+        case READ_MORE:
+            return {
+                content: readMoreFunc(state, action)
+            }
+
 
         default:
             return state
@@ -68,5 +93,12 @@ export function addStory(new_story) {
     return {
         type: SUBMIT_STORY,
         new_story
+    }
+}
+
+export function readMore(storyId) {
+    return {
+        type: READ_MORE,
+        storyId
     }
 }

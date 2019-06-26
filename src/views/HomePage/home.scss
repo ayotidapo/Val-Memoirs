@@ -2,12 +2,24 @@
     //text-align: center;
     font-family:'lato';
     overflow-x:hidden;
-  
+    .minimize{
+        
+        margin-bottom:2px;
+        span{
+            text-decoration: underline;
+            &:hover{
+                cursor:pointer;
+                
+            }
+        }
+    }
+    
     .story{
       background:#ccc;
       padding: 10px 10px 4px 10px;
       margin:10px;
       border-radius:3px;
+      height: 247px;
       .sumry{
         padding-bottom:35px;
         span{

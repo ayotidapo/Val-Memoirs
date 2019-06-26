@@ -1,23 +1,20 @@
-import { createStore, applyMiddleware } from 'redux'
-import { routerMiddleware } from 'react-router-redux'
-import thunk from 'redux-thunk'
-//import api from 'redux/middleware/api'
-import rootReducer from './reducer'
-import { logger } from 'redux-logger'
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from "./reducer";
+import thunk from "redux-thunk";
+import { logger } from "redux-logger";
+import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
 
-export default function configureStore(history, client) {
-    const reduxRouterMiddleware = routerMiddleware(history)
-    const middlewares = [reduxRouterMiddleware, thunk]
-    if (process.env.NODE_ENV === 'development') {
-        middlewares.push(logger)
+export default function configureStore(initialState) {
+    const middlewares = [thunk];
+    if (process.env.NODE_ENV === "development") {
+        console.log(process.env.NODE_ENV)
+        middlewares.push(reduxImmutableStateInvariant());
+        middlewares.push(logger);
     }
-    const store = createStore(rootReducer, applyMiddleware(...middlewares))
-    if (module.hot) {
-        // Enable Webpack hot module replacement for reducers
-        module.hot.accept('./reducer', () => {
-            const nextRootReducer = rootReducer
-            store.replaceReducer(nextRootReducer)
-        })
-    }
-    return store
+
+    return createStore(
+        rootReducer,
+        initialState,
+        applyMiddleware(...middlewares)
+    );
 }
