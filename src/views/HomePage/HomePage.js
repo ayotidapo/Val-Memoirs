@@ -89,14 +89,18 @@ class Homepage extends React.Component {
         }
         new_story.likes = 0
         new_story.id = id
+        console.log(new_story)
         if (registered.includes(new_story.username)) {
             toastr.warning(`@${new_story.username} has already shared a story!`, 'Warning!', { timeOut: 5000 })
             return
         }
-        // else if (Object.keys(new_story).some(field => !fields[field].value)) {
-        //     toastr.error(`All fields are Required`, 'Error!', { timeOut: 5000 })
-        //     return
-        // }
+        const validatObj = { ...new_story }
+        delete validatObj.id
+        delete validatObj.likes
+        if (Object.keys(validatObj).some(field => !fields[field].value)) {
+            toastr.error(`All fields are Required`, 'Error!', { timeOut: 5000 })
+            return
+        }
         this.props.addStory(new_story)
         this.toggle()
         toastr.success('Story Added Succesfully!', 'Success', { timeOut: 5000 })
