@@ -54,7 +54,8 @@ class Homepage extends React.Component {
                     { label: 'Male', value: "M", checked: false },
                     { label: 'Female', value: "F", checked: false }
                 ],
-                type: 'radio'
+                type: 'radio',
+                value: ''
             },
             headline: {
                 name: "headline",
@@ -92,10 +93,10 @@ class Homepage extends React.Component {
             toastr.warning(`@${new_story.username} has already shared a story!`, 'Warning!', { timeOut: 5000 })
             return
         }
-        if (Object.keys(new_story).some(field => !fields[field].value)) {
-            toastr.error(`All fields are Required`, 'Error!', { timeOut: 5000 })
-            return
-        }
+        // else if (Object.keys(new_story).some(field => !fields[field].value)) {
+        //     toastr.error(`All fields are Required`, 'Error!', { timeOut: 5000 })
+        //     return
+        // }
         this.props.addStory(new_story)
         this.toggle()
         toastr.success('Story Added Succesfully!', 'Success', { timeOut: 5000 })

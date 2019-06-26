@@ -24,7 +24,6 @@ const InputFields = ({ field, onChange }) => {
                         <input
                             type={field.type}
                             name={field.name}
-                            checked={field.checked}
                             value={choice.value}
                             onChange={e => onChange(e.target.name, e.target.value)}
                         />
