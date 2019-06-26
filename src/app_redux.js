@@ -1,5 +1,6 @@
 import 'whatwg-fetch'
 import axios from 'axios'
+
 const GET_IMAGES = "app/GET_IMAGES"
 
 const initialImages = {
