@@ -82,10 +82,11 @@ const likeStoryFunc = (state, action) => {
 export function userStory(state = initialState, action) {
     switch (action.type) {
         case SUBMIT_STORY:
-            return { ...addNewStoryFunc(state, action) }
+            return { ...state, ...addNewStoryFunc(state, action) }
 
         case LIKE_STORY:
             return {
+                ...state,
                 content: likeStoryFunc(state, action)
             }
 
