@@ -51,21 +51,15 @@ const ImageSlider = (props) => (
         </div>
         <Slider {...settings}>
 
+            {
+                props.slideImages.results.slice(0, 5).map((image, index) => (
+                    <div className="frm" key={index}>
+                        <img src={image.urls.regular} alt="img-1" />
 
+                    </div>
+                ))
+            }
 
-            <div className="frm">
-                <img src="/assets/love.jpg" alt="img-1" />
-
-            </div>
-            <div className="frm">
-                <img src="/assets/Val.png" alt="img-1" />
-            </div>
-            <div className="frm">
-                <img src="/assets/love.jpg" alt="img-1" />
-            </div>
-            <div className="frm">
-                <img src="/assets/Val.png" alt="img-1" />
-            </div>
 
 
         </Slider>

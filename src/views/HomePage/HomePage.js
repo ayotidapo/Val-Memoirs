@@ -89,7 +89,6 @@ class Homepage extends React.Component {
         }
         new_story.likes = 0
         new_story.id = id
-        console.log(new_story)
         if (registered.includes(new_story.username)) {
             toastr.warning(`@${new_story.username} has already shared a story!`, 'Warning!', { timeOut: 5000 })
             return
@@ -144,6 +143,7 @@ class Homepage extends React.Component {
     }
     render() {
         const { shared } = this.props.userData
+        const { slideImages } = this.props
         const { fields, action, story, title, index } = this.state
         switch (action) {
             case 'share':
@@ -176,7 +176,7 @@ class Homepage extends React.Component {
                     <AppNavbar onClicked={this.onsetAction} />
                 </div>
 
-                <Slider onClicked={this.onsetAction} shared={shared} />
+                <Slider onClicked={this.onsetAction} slideImages={slideImages} />
                 <Modal open={open} toggle={this.toggle} title={title} >
                     {view}
 

@@ -9,7 +9,7 @@ import { callgetImages } from './../../app_redux'
 
 const mapStateToProps = (state, ownProps) => ({
     userData: state.userStory,
-
+    slideImages: state.slideImages
 })
 
 const mapDispatchToProps = dispatch => ({
